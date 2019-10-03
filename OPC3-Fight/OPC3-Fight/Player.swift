@@ -9,261 +9,288 @@
 import Foundation
 
 class Player {
+
+var name : String
+var team = [Character]()
+   
+   
+   init(name : String) {
+       
+    self.name = name
+   }
     
-    var name : String
-    var team = [Character]()
-    
-    init(name : String) {
-        
-        self.name = name
-        
-    }
-    
-    func presentationTeam() {
+    func teamPresentation() {
         
         var index = 0
         
+       print("Nom Joueur : \(name)")
+        
         for character in team {
             
-            print("Number \(index), Player : \(name), Character : \(character.name), life : \(character.life), Weapon : \(character.weapon.name), Damage : \(character.weapon.damage)")
-            
-            index += 1
+          print("Number \(index), Player : \(name), Character : \(character.name), life : \(character.life), Weapon : \(character.weapon.name), Damage : \(character.weapon.damage)")
+                       
+                       index += 1
+    
             
         }
-    }
-    
-    func createTeam() {
         
-        for index in 1...3 {
-            
-            print("Create a character")
-            
-            let character = readLine()
-            
-            if let character = character {
-                
-                if character == "Warrior" {
-                    
-                    let warriorWeapon = Weapon(name: "Sword", damage: 10)
-                    
-                    let warrior = Warrior(name: "", life: 100, weapon: warriorWeapon)
-                    
-                    print("Enter your character's name")
-                    
-                    let warriorName = readLine()
-                    
-                    if let warriorName = warriorName {
-                        
-                        warrior.name = warriorName
-                        
-                        team.append(warrior)
-                        
-                    }
-                    
-                } else if character == "Dwarf" {
-                    
-                    let dwarfWeapon = Weapon(name: "Axe", damage: 10)
-                    
-                    let dwarf = Dwarf(name: "", life: 100, weapon: dwarfWeapon)
-                    
-                    print("Enter your character's name")
-                    
-                    let dwarfName = readLine()
-                    
-                    if let dwarfName = dwarfName {
-                        
-                        dwarf.name = dwarfName
-                        
-                        team.append(dwarf)
-                        
-                    }
-                    
-                } else if character == "Magus" {
-                    
-                    let magusWeapon = Weapon(name: "Scepter", damage: 10)
-                    
-                    let magus = Magus(name: "", life: 100, weapon: magusWeapon)
-                    
-                    print("Enter your character's name")
-                    
-                    let magusName = readLine()
-                    
-                    if let magusName = magusName {
-                        
-                        magus.name = magusName
-                        
-                        team.append(magus)
-                        
-                    }
-                    
-                } else if character == "Colossus" {
-                    
-                    let colossusWeapon = Weapon(name: "Mace", damage: 10)
-                    
-                    let colossus = Colossus(name: "", life: 100, weapon: colossusWeapon)
-                    
-                    print("Enter your character's name")
-                    
-                    let colossusName = readLine()
-                    
-                    if let colossusName = colossusName {
-                        
-                        colossus.name = colossusName
-                        
-                        team.append(colossus)
-                        
-                    }
-                    
-                }
-    
-            }
-            
-        }
     }
     
-    func characterChoice() -> Character {
+    
+    
+    func createCharacter() {
+        
+        var nameSetCharacter = Set<String>()
         
         let weapon = Weapon(name: "", damage: 0)
+        let character = Character(name: "", life: 0, weapon: weapon)
         
+        let warriorWeapon = Weapon(name: "Sword", damage: 10)
+        let warrior = Warrior(name: "", life: 100, weapon: warriorWeapon)
+        let dwarfWeapon = Weapon(name: "Axe", damage: 10)
+        let dwarf = Dwarf(name: "", life: 100, weapon: dwarfWeapon)
+        let magusWeapon = Weapon(name: "Scepter", damage: 10)
+        let magus = Magus(name: "", life: 100, weapon: magusWeapon)
+        let colossusWeapon = Weapon(name: "Mace", damage: 10)
+        let colossus = Colossus(name: "", life: 100, weapon: colossusWeapon)
+                              
+                           
+        for index in 1...3 {
+            
+            print("Choose a character between: warrior, dwarf, mage, colossus")
+                   
+                   let answer = readLine()
+                   
+                   if let answer = answer {
+                       
+                       switch answer.lowercased() {
+                               
+                           case "warrior":
+                               
+                               print("Choose the name of your character")
+                               
+                               let nameCharacter = readLine()
+                               
+                                verificationName(name: nameCharacter!, arraySet: nameSetCharacter)
+                               
+                               if let nameCharacter = nameCharacter {
+                                   
+                                warrior.name = nameCharacter
+                                   
+                                   print("The name of your warrior is \(warrior.name)")
+                                   
+                                   team.append(warrior)
+                                   
+                                   
+                        }
+                        
+                       case "dwarf":
+                        
+                       print("Choose the name of your character")
+                                                   
+                                                   let nameCharacter = readLine()
+                                                   
+                                                    verificationName(name: nameCharacter!, arraySet: nameSetCharacter)
+                                                   
+                                                   if let nameCharacter = nameCharacter {
+                                                       
+                                                    dwarf.name = nameCharacter
+                                                       
+                                                       print("The name of your dwarf is \(dwarf.name)")
+                                                       
+                                                       team.append(dwarf)
+                                               
+                                               
+                                           }
+                        
+                       case "magus":
+                        
+                         print("Choose the name of your character")
+                                                                          
+                        let nameCharacter = readLine()
+                                                                          
+                        verificationName(name: nameCharacter!, arraySet: nameSetCharacter)
+                                                                          
+                        if let nameCharacter = nameCharacter {
+                                                                              
+                            magus.name = nameCharacter
+                                                                              
+                        print("The name of your dwarf is \(magus.name)")
+                                                                              
+                        team.append(magus)
+                                             
+                                         }
+                        
+                       case "colosse":
+                        
+                        print("Choose the name of your character")
+                                                                                                                        
+                                                let nameCharacter = readLine()
+                                                                                                 
+                                                verificationName(name: nameCharacter!, arraySet: nameSetCharacter)
+                                                                                                 
+                                                if let nameCharacter = nameCharacter {
+                                                                                                     
+                                                colossus.name = nameCharacter
+                                                                                                     
+                                                print("The name of your colossus is \(colossus.name)")
+                                                                                                     
+                                                team.append(colossus)
+                        }
+                               
+                           default:
+                               print("Type of unrecognized character")
+                        
+                                }
+                        
+                            }
+                           
+                       }
+                       
+                   }
+        
+        
+    func verificationName(name : String, arraySet: Set<String>) {
+        
+        var arraySet = Set<String>()
+        
+            if arraySet.contains(name) {
+                
+             print("This name is already present in the table. Please choose another name, please?")
+                
+                let nameCharacter = readLine()
+                
+            } else {
+                
+                arraySet.insert(name)
+        }
+            
+        
+        
+    }
+        
+            
+     func characterChoice() -> Character? {
+        
+        let weapon = Weapon(name: "", damage: 0)
         var character = Character(name: "", life: 0, weapon: weapon)
         
-        print("Select a character")
+        print("Select a character : 0, 1, 2")
         
         let characterChoice = readLine()
         
         let newChoice = Int(characterChoice!)
         
-        if let newChoice = newChoice {
+         if let newChoice = newChoice {
             
-            if newChoice == 0 {
+            switch newChoice {
                 
-                print("\(team[0].name)")
+            case 0:
+                return team[0]
                 
-                character = team[0]
+            case 1:
+                return team[1]
                 
-            } else if newChoice == 1 {
+            case 2:
+                return team[2]
                 
-                print("\(team[1].name)")
+            default:
+                return nil
                 
-                character = team[1]
-                
-            } else if newChoice == 2 {
-                
-                print("\(team[2].name)")
-                
-                character = team[2]
                 
             }
+            
         }
         
         return character
+    }
+        
+        
+        func personalCare() {
+            
+            guard let character = characterChoice() else { print("No character chosen"); return  }
+            
+            character.care()
+        
+            print("Character \(character.name), Your new life points are:\(character.life)")
+        }
+        
+       
+    func playerAttack(adversary: Player) {
+        
+        
+        teamPresentation()
+        
+        let attacker = characterChoice()!
+        
+        print("Which characters of the opposing team, do you want to attack?")
+        
+        adversary.teamPresentation()
+        
+        let attacking = adversary.characterChoice()!
+        
+        attacker.attack(adversary : attacking)
+        
+        print("Attack Summary: \(attacker.name) just attack \(attacking.name) and you still have \(attacking.life) life.")
         
     }
     
-    func personalCare() -> Character {
+    func livingCharacter() -> Bool {
         
-        let weapon = Weapon(name: "", damage: 0)
-        
-        var character = Character(name: "", life: 0, weapon: weapon)
-        
-        print("Select a character")
-        
-        let characterChoice = readLine()
-        
-        let newChoice = Int(characterChoice!)
-        
-        if let newChoice = newChoice {
+        for character in team {
             
-            if newChoice == 0 {
+            if character.life > 0 {
                 
-                print("You chose: \(team[0].name)")
+                return true
                 
-               print("Want to heal your character ? Yes or No")
-                
-                let response = readLine()
-                
-                if let response = response {
-                    
-                    if response == "Yes" {
-                        
-                        team[0].care()
-                        
-                        print("Your new health points are from : \(team[0].life)")
-                        
-                    } else if response == "No" {
-                        
-                        personalCare()
-                    }
-                }
-                
-            } else if newChoice == 1 {
-                
-                print("You chose: \(team[1].name)")
-                
-                print("Want to heal your character ? Yes or No")
-                
-                let response = readLine()
-                
-                if let response = response {
-                    
-                    if response == "Yes" {
-                        
-                        team[1].care()
-                        
-                        print("Your new health points are from : \(team[1].life)")
-                        
-                    } else if response == "No" {
-                        
-                        personalCare()
-                    }
-                }
-                
-            } else if newChoice == 2 {
-                
-                print("You chose: \(team[2].name)")
-                
-                print("Want to heal your character ? Yes or No")
-                
-                let response = readLine()
-                
-                if let response = response {
-                    
-                    if response == "Yes" {
-                        
-                        team[2].care()
-                        
-                        print("Your new health points are from : \(team[2].life)")
-                        
-                    } else if response == "No" {
-                        
-                        personalCare()
-                    }
-                }
-        
             }
         }
         
-         return character
+        return false
+        
+        }
+    
+    
+    func searchCharacter(character : Character) -> Int {
+              
+           var counter = 0
+              
+              for character in team  {
+                  
+                if character.life <= 0  {
+          
+                    return counter
+                      
+                 }
+                  
+                  counter += 1
+                  
+              }
+         
+              return counter
+       }
+       
+    
+    func removeCharacter()  {
+        
+         for character in team  {
+            
+            if character.life <= 0 {
+                
+                team.remove(at: searchCharacter(character : character))
+                
+            }
+        }
+        
     }
     
-    func playerAttack(adversary : Player) {
-        
-        presentationTeam()
-        
-        adversary.presentationTeam()
-        
-          print("Select a character")
-        
-        var characterOne = characterChoice()
-        
-        var characterTwo = adversary.characterChoice()
-        
-        characterOne.attack(adversary: characterTwo)
-        
-        print(characterTwo.life)
-        
-    }
     
+       
 }
+
+
+
+
+
 
 
