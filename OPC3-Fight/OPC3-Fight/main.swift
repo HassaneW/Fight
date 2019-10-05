@@ -10,4 +10,4 @@ import Foundation
 
 let game = Game()
 
-game.gameStart()
+game.create2Players()

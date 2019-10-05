@@ -18,7 +18,7 @@ class Game {
           
           for counter in 1...2 {
               
-              print("Enter your player name \(counter)")
+              print("Enter your name player \(counter)")
               
               let playerName = readLine()
               
