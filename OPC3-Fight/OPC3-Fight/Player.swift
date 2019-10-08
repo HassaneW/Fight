@@ -84,8 +84,6 @@ class Player {
                                     
                                 }
                                 
-                                
-                                
                             }
                             
                         }
@@ -103,7 +101,7 @@ class Player {
                         
                         if verificationName(name: nameCharacter) == true {
                             
-                            let dwarfWeapon = Weapon(name: "Axe", damage: 10)
+                            let dwarfWeapon = Weapon(name: "Axe", damage: 100)
                             let dwarf = Dwarf(name: nameCharacter, life: 100, weapon: dwarfWeapon)
                             
                             print("The name of your dwarf is \(dwarf.name)")
@@ -118,7 +116,7 @@ class Player {
                                 
                                 if verificationName(name: nameCharacter) == true {
                                     
-                                    let dwarfWeapon = Weapon(name: "Axe", damage: 10)
+                                    let dwarfWeapon = Weapon(name: "Axe", damage: 100)
                                     let dwarf = Dwarf(name: nameCharacter, life: 100, weapon: dwarfWeapon)
                                     
                                     print("The name of your dwarf is \(dwarf.name)")
@@ -135,12 +133,15 @@ class Player {
                     
                 case "magus":
                     
+                      print("Choose the name of your character")
+                    
                     let nameCharacter = readLine()
                     
                     if let nameCharacter = nameCharacter { // guard let
                         
                         if verificationName(name: nameCharacter) == true {
-                            let magusWeapon = Weapon(name: "Scepter", damage: 10)
+                            
+                            let magusWeapon = Weapon(name: "Scepter", damage: 100)
                             let magus = Magus(name: nameCharacter, life: 100, weapon: magusWeapon)
                             
                             print("The name of your magus is \(magus.name)")
@@ -154,7 +155,8 @@ class Player {
                             if let nameCharacter = nameCharacter { // guard let
                                 
                                 if verificationName(name: nameCharacter) == true {
-                                    let magusWeapon = Weapon(name: "Scepter", damage: 10)
+                                    
+                                    let magusWeapon = Weapon(name: "Scepter", damage: 100)
                                     let magus = Magus(name: nameCharacter, life: 100, weapon: magusWeapon)
                                     
                                     print("The name of your magus is \(magus.name)")
@@ -179,7 +181,7 @@ class Player {
                         
                         if verificationName(name: nameCharacter) == true {
                             
-                            let colossusWeapon = Weapon(name: "Mace", damage: 10)
+                            let colossusWeapon = Weapon(name: "Mace", damage: 100)
                             let colossus = Colossus(name: nameCharacter, life: 100, weapon: colossusWeapon)
                             
                             print("The name of your colossus is \(colossus.name)")
@@ -204,13 +206,12 @@ class Player {
                                     
                                 }
                                 
-                                
                             }
                             
                         }
                         
                     }
-                
+                    
                 default:
                     print("Type of unrecognized character")
                     
@@ -241,35 +242,27 @@ class Player {
     }
     
     
-    
     func characterChoice() -> Character? {
         
         print("Select your character number")
         
-        let characterChoice = readLine()
+        let reponse = readLine()
         
-        if let characterChoice = characterChoice, let newChoice = Int(characterChoice) {
+        if let reponse = reponse {
             
-            
-            // Se renseigner sur comment fonctionne contains
-            
-            switch newChoice { // if indices.contains(index) { self[index] } else return nil
+            if let reponseIndex = Int(reponse) {
                 
-                // if indices.contains(index) { self[index] } else return nil
-                // if team.contrains(newChoice) { team[newChoice] } else { return nil }
-                
-                
-            case 0:
-                return team[0]
-                
-            case 1:
-                return team[1]
-                
-            case 2:
-                return team[2]
-                
-            default:
-                return nil
+                if team.indices.contains(reponseIndex) {
+                    
+                    return team[reponseIndex]
+                    
+                } else {
+                    
+                    print("This player does not exist, try again ?")
+                    
+                    return characterChoice()
+                    
+                }
                 
                 
             }
@@ -278,6 +271,60 @@ class Player {
         
         return nil
     }
+    
+    
+    /*
+     
+     func characterChoice() -> Character? {
+     print("Select your character number")
+     
+     guard let characterChoice = readLine(),
+     let characterChoiceIndex = Int(characterChoice),
+     team.indices.contains(characterChoiceIndex) else { return nil }
+     
+     return team[characterChoiceIndex]
+     }
+     
+     */
+    
+    /*
+     func characterChoice() -> Character? {
+     
+     print("Select your character number")
+     
+     let characterChoice = readLine()
+     
+     if let characterChoice = characterChoice, let newChoice = Int(characterChoice) {
+     
+     let index = newChoice
+     let isValidIndex = index >= 0 && index <= team.count
+     
+     return isValidIndex ? team[index] : nil
+     
+     }
+     
+     return nil
+     
+     }
+     
+     */
+    
+   
+    
+    /*
+     
+     // Se renseigner sur comment fonctionne contains
+     
+     // if indices.contains(index) { self[index] } else return nil
+     
+     // if indices.contains(index) { self[index] } else return nil
+     // if team.contrains(newChoice) { team[newChoice] } else { return nil }
+     
+     
+     */
+    
+    
+    
     
     
     func personalCare() {
@@ -294,17 +341,28 @@ class Player {
         
         teamPresentation()
         
-        let attacker = characterChoice()!
+        if let attacker = characterChoice() {
+            
+            print("Which characters of the opposing team, do you want to attack?")
+            
+            adversary.teamPresentation()
+            
+            if let attacking = adversary.characterChoice() {
+                
+                attacker.attack(adversary : attacking)
+                
+                print("Attack Summary: \(attacker.name) just attack \(attacking.name) and you still have \(attacking.life) life.")
+                
+                
+            }
+            
+            
+        }
         
-        print("Which characters of the opposing team, do you want to attack?")
         
-        adversary.teamPresentation()
         
-        let attacking = adversary.characterChoice()!
         
-        attacker.attack(adversary : attacking)
         
-        print("Attack Summary: \(attacker.name) just attack \(attacking.name) and you still have \(attacking.life) life.")
         
     }
     

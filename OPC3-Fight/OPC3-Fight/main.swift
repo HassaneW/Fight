@@ -11,3 +11,5 @@ import Foundation
 let game = Game()
 
 game.create2Players()
+game.part()
+
