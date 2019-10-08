@@ -44,9 +44,9 @@ class Game {
     func part() {
         
         
-        var compteurSoin = 0
-        var compteur1 = 0
-        var compteur2 = 0
+        var counterCare = 0
+        var compteurOne = 0
+        var compteurTwo = 0
         
         
         while players[0].livingCharacter() && players[1].livingCharacter() {
@@ -59,7 +59,7 @@ class Game {
                 
                 if answer == "Care" {
                     
-                     compteurSoin += 1
+                     counterCare += 1
                     
                     players[0].teamPresentation()
                     
@@ -75,7 +75,7 @@ class Game {
                     
                     winner()
                     
-                    compteur1 += 1
+                    compteurOne += 1
                     
                     if players[1].team.count == 0 {
                         
@@ -107,7 +107,7 @@ class Game {
                     
                     winner()
                     
-                    compteur2 += 1
+                    compteurTwo += 1
                     
                     if players[0].team.count == 0 {
                         
@@ -119,7 +119,7 @@ class Game {
             
         }
         
-        print("Statistique partie : Soin effectuer : \(compteurSoin), nombre d'attaque Joueur 1 \(players[0].name) : \(compteur1), nombre d'attaque Joueur 2 \(players[1].name): \(compteur2)")
+        print("Statistics part: Care perform: \(counterCare), Player Attack Number 1 \(players[0].name) : \(compteurOne), Player Attack Number 2 \(players[1].name): \(compteurTwo)")
         
     }
     
