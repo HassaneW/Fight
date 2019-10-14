@@ -122,14 +122,16 @@ class Game {
             
         }
         
-        // Faire la même chose pour le player 2
+
         print("""
             Statistics part:
             Player One : \(players[0].name),
             Care performed: \(counterCare1),
             Attack performed : \(compteurOne),
             
-            Care perform: \(counterCare1) Player Attack Number 2 \(players[1].name): \(compteurTwo)
+            Player Two : \(players[1].name),
+            Care performed: \(counterCare2),
+            Attack performed : \(compteurTwo),
             """)
         
         
