@@ -133,7 +133,7 @@ class Player {
                     
                 case "magus":
                     
-                      print("Choose the name of your character")
+                    print("Choose the name of your character")
                     
                     let nameCharacter = readLine()
                     
@@ -280,7 +280,7 @@ class Player {
      
      guard let characterChoice = readLine(),
      let characterChoiceIndex = Int(characterChoice),
-     team.indices.contains(characterChoiceIndex) else { return nil }
+     team.indices.contains(characterChoiceIndex) else { return  }
      
      return team[characterChoiceIndex]
      }
@@ -309,7 +309,7 @@ class Player {
      
      */
     
-   
+    
     
     /*
      
@@ -351,17 +351,21 @@ class Player {
                 
                 attacker.attack(adversary : attacking)
                 
-                print("Attack Summary: \(attacker.name) just attack \(attacking.name) and you still have \(attacking.life) life.")
+                // Tant que le joueur attaquer est inferieur à 0 joueur attaquer vaut 0
                 
-                
+                if attacking.life == 0 {
+                    
+                    print("Attack Summary: \(attacker.name) just attack \(attacking.name) and you still have \(attacking.life) life.")
+                    
+                } else if attacking.life < 0 {
+                    
+                    print("Attack Summary: \(attacker.name) just attack \(attacking.name) and you still have 0 life.")
+                    
+                }
+                    
             }
             
-            
         }
-        
-        
-        
-        
         
         
     }

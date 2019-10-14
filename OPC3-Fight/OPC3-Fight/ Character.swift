@@ -27,13 +27,12 @@ class Character {
         life = life + 20
     }
     
-    func attack(adversary : Character) -> Character {
+    func attack(adversary : Character) {
         
         magicChest()
         
         adversary.life = adversary.life - weapon.damage
-        
-        return adversary
+    
     }
     
     func magicChest() {

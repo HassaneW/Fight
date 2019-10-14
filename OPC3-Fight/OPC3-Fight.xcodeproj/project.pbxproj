@@ -113,7 +113,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1030;
-				LastUpgradeCheck = 1030;
+				LastUpgradeCheck = 1100;
 				ORGANIZATIONNAME = WANDIANGA;
 				TargetAttributes = {
 					509C1A1C231E556F006F33E3 = {
@@ -127,6 +127,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = 509C1A14231E556F006F33E3;
 			productRefGroup = 509C1A1E231E556F006F33E3 /* Products */;
@@ -276,6 +277,7 @@
 		509C1A25231E556F006F33E3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = DTMD9PXB8B;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -286,6 +288,7 @@
 		509C1A26231E556F006F33E3 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = DTMD9PXB8B;
 				PRODUCT_NAME = "$(TARGET_NAME)";

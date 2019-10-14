@@ -14,7 +14,7 @@ class Game {
     var players = [Player]()
     var team = [Character]()
     
-    func create2Players () {
+    func create2Players() {
         
         for counter in 1...2 {
             
@@ -41,12 +41,13 @@ class Game {
     }
     
     
-    func part() {
+    func    part() {
         
         
-        var counterCare = 0
+        var counterCare1 = 0
         var compteurOne = 0
         var compteurTwo = 0
+        var counterCare2 = 0
         
         
         while players[0].livingCharacter() && players[1].livingCharacter() {
@@ -59,7 +60,7 @@ class Game {
                 
                 if answer == "Care" {
                     
-                     counterCare += 1
+                    counterCare1 += 1
                     
                     players[0].teamPresentation()
                     
@@ -97,6 +98,8 @@ class Game {
                     
                     players[1].personalCare()
                     
+                    counterCare2 += 1
+                    
                 } else if answer2 == "Attack" {
                     
                     players[1].playerAttack(adversary: players[0])
@@ -119,7 +122,17 @@ class Game {
             
         }
         
-        print("Statistics part: Care perform: \(counterCare), Player Attack Number 1 \(players[0].name) : \(compteurOne), Player Attack Number 2 \(players[1].name): \(compteurTwo)")
+        // Faire la même chose pour le player 2
+        print("""
+            Statistics part:
+            Player One : \(players[0].name),
+            Care performed: \(counterCare1),
+            Attack performed : \(compteurOne),
+            
+            Care perform: \(counterCare1) Player Attack Number 2 \(players[1].name): \(compteurTwo)
+            """)
+        
+        
         
     }
     
