@@ -1,13 +1,14 @@
 //
-//  main.swift
+//  Colossus.swift
 //  OPC3-Fight
 //
-//  Created by WANDIANGA on 03/09/2019.
+//  Created by WANDIANGA on 13/09/2019.
 //  Copyright © 2019 WANDIANGA. All rights reserved.
 //
 
 import Foundation
 
-let game = Game()
-game.start()
+class Colossus: Character {
+    
+}
 
