@@ -9,9 +9,7 @@
 import Foundation
 
 class Magus: Character {
-    
-    
-    
+
 }
 
 

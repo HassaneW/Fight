@@ -9,10 +9,7 @@
 import Foundation
 
 class Dwarf: Character {
-    
-    
-    
-    
+
 }
 
 

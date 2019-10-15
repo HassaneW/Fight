@@ -17,8 +17,8 @@ class Player {
     init(name : String) {
         
         self.name = name
+        
     }
-    
     
     func teamPresentation() {
         
@@ -32,15 +32,11 @@ class Player {
             
             index += 1
             
-            
         }
         
     }
     
-    
-    
     func createCharacter() {
-        
         
         while team.count <= 2 {
             
@@ -58,7 +54,8 @@ class Player {
                     
                     let nameCharacter = readLine()
                     
-                    if let nameCharacter = nameCharacter  { // guard let
+                    if let nameCharacter = nameCharacter  {
+                        
                         if verificationName(name: nameCharacter) == true {
                             
                             let warriorWeapon = Weapon(name: "Sword", damage: 100)
@@ -75,6 +72,7 @@ class Player {
                             if let nameCharacter = nameCharacter {
                                 
                                 if verificationName(name: nameCharacter) == true {
+                                    
                                     let warriorWeapon = Weapon(name: "Sword", damage: 100)
                                     let warrior = Warrior(name: nameCharacter, life: 100, weapon: warriorWeapon)
                                     
@@ -88,7 +86,6 @@ class Player {
                             
                         }
                         
-                        
                     }
                     
                 case "dwarf":
@@ -97,7 +94,7 @@ class Player {
                     
                     let nameCharacter = readLine()
                     
-                    if let nameCharacter = nameCharacter { // guard let
+                    if let nameCharacter = nameCharacter {
                         
                         if verificationName(name: nameCharacter) == true {
                             
@@ -137,7 +134,7 @@ class Player {
                     
                     let nameCharacter = readLine()
                     
-                    if let nameCharacter = nameCharacter { // guard let
+                    if let nameCharacter = nameCharacter {
                         
                         if verificationName(name: nameCharacter) == true {
                             
@@ -152,7 +149,7 @@ class Player {
                             
                             let nameCharacter = readLine()
                             
-                            if let nameCharacter = nameCharacter { // guard let
+                            if let nameCharacter = nameCharacter {
                                 
                                 if verificationName(name: nameCharacter) == true {
                                     
@@ -177,7 +174,7 @@ class Player {
                     
                     let nameCharacter = readLine()
                     
-                    if let nameCharacter = nameCharacter { // gaurd let
+                    if let nameCharacter = nameCharacter {
                         
                         if verificationName(name: nameCharacter) == true {
                             
@@ -192,7 +189,7 @@ class Player {
                             
                             let nameCharacter = readLine()
                             
-                            if let nameCharacter = nameCharacter { // gaurd let
+                            if let nameCharacter = nameCharacter {
                                 
                                 if verificationName(name: nameCharacter) == true {
                                     
@@ -203,7 +200,6 @@ class Player {
                                     
                                     team.append(colossus)
                                     
-                                    
                                 }
                                 
                             }
@@ -213,6 +209,7 @@ class Player {
                     }
                     
                 default:
+                    
                     print("Type of unrecognized character")
                     
                 }
@@ -222,7 +219,6 @@ class Player {
         }
         
     }
-    
     
     func verificationName(name : String) -> Bool {
         
@@ -240,7 +236,6 @@ class Player {
         }
         
     }
-    
     
     func characterChoice() -> Character? {
         
@@ -264,68 +259,12 @@ class Player {
                     
                 }
                 
-                
             }
             
         }
         
         return nil
     }
-    
-    
-    /*
-     
-     func characterChoice() -> Character? {
-     print("Select your character number")
-     
-     guard let characterChoice = readLine(),
-     let characterChoiceIndex = Int(characterChoice),
-     team.indices.contains(characterChoiceIndex) else { return  }
-     
-     return team[characterChoiceIndex]
-     }
-     
-     */
-    
-    /*
-     func characterChoice() -> Character? {
-     
-     print("Select your character number")
-     
-     let characterChoice = readLine()
-     
-     if let characterChoice = characterChoice, let newChoice = Int(characterChoice) {
-     
-     let index = newChoice
-     let isValidIndex = index >= 0 && index <= team.count
-     
-     return isValidIndex ? team[index] : nil
-     
-     }
-     
-     return nil
-     
-     }
-     
-     */
-    
-    
-    
-    /*
-     
-     // Se renseigner sur comment fonctionne contains
-     
-     // if indices.contains(index) { self[index] } else return nil
-     
-     // if indices.contains(index) { self[index] } else return nil
-     // if team.contrains(newChoice) { team[newChoice] } else { return nil }
-     
-     
-     */
-    
-    
-    
-    
     
     func personalCare() {
         
@@ -334,8 +273,8 @@ class Player {
         character.care()
         
         print("Character \(character.name), Your new life points are:\(character.life)")
+        
     }
-    
     
     func playerAttack(adversary: Player) {
         
@@ -351,8 +290,6 @@ class Player {
                 
                 attacker.attack(adversary : attacking)
                 
-                // Tant que le joueur attaquer est inferieur à 0 joueur attaquer vaut 0
-                
                 if attacking.life == 0 {
                     
                     print("Attack Summary: \(attacker.name) just attack \(attacking.name) and you still have \(attacking.life) life.")
@@ -362,11 +299,10 @@ class Player {
                     print("Attack Summary: \(attacker.name) just attack \(attacking.name) and you still have 0 life.")
                     
                 }
-                    
+                
             }
             
         }
-        
         
     }
     
@@ -379,12 +315,12 @@ class Player {
                 return true
                 
             }
+            
         }
         
         return false
         
     }
-    
     
     func searchCharacter(character : Character) -> Int {
         
@@ -405,7 +341,6 @@ class Player {
         return counter
     }
     
-    
     func removeCharacter()  {
         
         for character in team  {
@@ -415,11 +350,10 @@ class Player {
                 team.remove(at: searchCharacter(character : character))
                 
             }
+            
         }
         
     }
-    
-    
     
 }
 

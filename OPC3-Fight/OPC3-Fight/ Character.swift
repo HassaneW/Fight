@@ -20,11 +20,13 @@ class Character {
         self.name = name
         self.life = life
         self.weapon = weapon
+        
     }
     
     func care()  {
         
         life = life + 20
+        
     }
     
     func attack(adversary : Character) {
@@ -32,12 +34,13 @@ class Character {
         magicChest()
         
         adversary.life = adversary.life - weapon.damage
-    
+        
     }
     
     func magicChest() {
         
         var number : Int = 0
+        
         number = Int.random(in: 2...100)
         
         if number % 5 == 0 {
@@ -45,8 +48,11 @@ class Character {
             weapon.damage = weapon.damage + weapon.damage
             
             print("You have just doubled the power of your attack thanks to the magic chest")
+            
         }
+        
     }
+    
 }
 
 

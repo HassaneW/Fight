@@ -30,25 +30,19 @@ class Game {
                 
                 player.createCharacter()
                 
-                
-                
             }
             
         }
         
-        
-        
     }
     
     
-    func    part() {
-        
+    func fight() {
         
         var counterCare1 = 0
         var compteurOne = 0
         var compteurTwo = 0
         var counterCare2 = 0
-        
         
         while players[0].livingCharacter() && players[1].livingCharacter() {
             
@@ -84,6 +78,7 @@ class Game {
                     }
                     
                 }
+                
             }
             
             print("Your turn to play \(players[1].name). Attack or Care")
@@ -118,11 +113,11 @@ class Game {
                     }
                     
                 }
+                
             }
             
         }
         
-
         print("""
             Statistics part:
             Player One : \(players[0].name),
@@ -134,10 +129,7 @@ class Game {
             Attack performed : \(compteurTwo),
             """)
         
-        
-        
     }
-    
     
     func deadTeam() {
         
@@ -157,27 +149,27 @@ class Game {
         
         if players[0].livingCharacter() == true && players[1].livingCharacter() == false {
             
-            print("The Winner is \(players[0].name)")
+            print("The Winner is \(players[0].name)\n")
+            
+            print("See you soon for a new game")
             
         } else if players[0].livingCharacter() == false && players[1].livingCharacter() == true {
             
-            print("The winner is \(players[1].name)")
+            print("The winner is \(players[1].name)\n")
+            
+            print("See you soon for a new game")
             
         }
         
     }
     
-    
-    func gameStart()  {
+    func start()  {
+        
+        print("Welcome to the game by W.\n")
         
         create2Players ()
-        part()
+        fight()
         
     }
-    
-    
-    
-    
-    
     
 }
