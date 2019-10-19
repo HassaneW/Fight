@@ -358,7 +358,75 @@ class Player {
 }
 
 
+/*
 
+ func testW () {
+        
+        let nameCharacter = readLine()
+        
+        if let nameCharacter = nameCharacter {
+            
+            if verificationName(name: nameCharacter) == true {
+                
+                let warriorWeapon = Weapon(name: "Sword", damage: 100)
+                let warrior = Warrior(name: nameCharacter, life: 100, weapon: warriorWeapon)
+                
+                print("The name of your warrior is \(warrior.name)")
+                
+                team.append(warrior)
+                
+            }
+            
+        }
+        
+    }
+    
+    func testNomPerso() {
+        
+        print("Choose the name of your character")
+        
+        let nameCharacter = readLine()
+        
+        guard let nameCharacterS = nameCharacter, verificationName(name: nameCharacterS) == true else { return  testW() }
+        
+        let warriorWeapon = Weapon(name: "Sword", damage: 100)
+        let warrior = Warrior(name: nameCharacterS, life: 100, weapon: warriorWeapon)
+        
+        print("The name of your warrior is \(warrior.name)")
+        
+        team.append(warrior)
+    }
+    
+    
+    func createCharacter() {
+           
+           while team.count <= 2 {
+               
+               print("Choose a character between: warrior, dwarf, magus, colossus")
+               
+               let answer = readLine()
+               
+               if let answer = answer {
+                   
+                   switch answer.lowercased() {
+                       
+                   case "warrior":
+                    
+                    testNomPerso()
+                       
+                   default:
+                       
+                       print("Type of unrecognized character")
+                       
+                   }
+                   
+               }
+               
+           }
+           
+       }
+ 
+ */
 
 
 
