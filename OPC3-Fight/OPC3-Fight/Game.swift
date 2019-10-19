@@ -66,9 +66,11 @@ class Game {
                     
                     players[1].removeCharacter()
                     
-                    deadTeam()
+                 //   deadTeam()
                     
-                    winner()
+                   // winner()
+                    
+                    deadWin()
                     
                     compteurOne += 1
                     
@@ -101,9 +103,11 @@ class Game {
                     
                     players[0].removeCharacter()
                     
-                    deadTeam()
+                   // deadTeam()
                     
-                    winner()
+                   // winner()
+                    
+                    deadWin()
                     
                     compteurTwo += 1
                     
@@ -129,7 +133,10 @@ class Game {
             Attack performed : \(compteurTwo),
             """)
         
+         print("See you soon for a new game")
     }
+    
+    /*
     
     func deadTeam() {
         
@@ -162,6 +169,7 @@ class Game {
         }
         
     }
+    */
     
     func start()  {
         
@@ -172,4 +180,25 @@ class Game {
         
     }
     
-}
+    
+    
+    func deadWin()  {
+        
+        if players[0].livingCharacter() == true && players[1].livingCharacter() == false {
+                
+            print("All your players are dead player : \(players[1].name)")
+            
+                print("The Winner is \(players[0].name)\n")
+                
+               
+                
+            } else if players[0].livingCharacter() == false && players[1].livingCharacter() == true {
+            
+                print("All your players are dead player : \(players[0].name)")
+                
+                print("The winner is \(players[1].name)\n")
+                
+            }
+            
+        }
+    }
