@@ -68,7 +68,7 @@ class Game {
                     
                     deadTeam()
                     
-                    winner()
+                    checkForWinner()
                     
                     compteurOne += 1
                     
@@ -103,7 +103,7 @@ class Game {
                     
                     deadTeam()
                     
-                    winner()
+                    checkForWinner()
                     
                     compteurTwo += 1
                     
@@ -133,7 +133,7 @@ class Game {
     
     func deadTeam() {
         
-        if  players[0].livingCharacter() == false {
+        if players[0].livingCharacter() == false {
             
             print("All your players are dead")
             
@@ -145,7 +145,7 @@ class Game {
         
     }
     
-    func winner()  {
+    func checkForWinner()  {
         
         if players[0].livingCharacter() == true && players[1].livingCharacter() == false {
             

@@ -12,7 +12,7 @@ class Player {
     
     var name : String
     var team = [Character]()
-    var nameSetCharacter = Set<String>()
+    private var nameSetCharacter = Set<String>()
     
     init(name : String) {
         
@@ -51,7 +51,7 @@ class Player {
                 case "warrior":
                     
                     print("Choose the name of your character")
-                    
+                        
                     let nameCharacter = readLine()
                     
                     if let nameCharacter = nameCharacter  {
