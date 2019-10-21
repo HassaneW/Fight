@@ -36,133 +36,7 @@ class Player {
         
     }
     
-    /*
-     
-     func retryW () {
-     
-     let nameCharacter = readLine()
-     
-     if let nameCharacter = nameCharacter {
-     
-     if verificationName(name: nameCharacter) == true {
-     
-     let warriorWeapon = Weapon(name: "Sword", damage: 100)
-     let warrior = Warrior(name: nameCharacter, life: 100, weapon: warriorWeapon)
-     
-     print("The name of your warrior is \(warrior.name)")
-     
-     team.append(warrior)
-     
-     }
-     
-     }
-     
-     }
-     
-     func createWarrior() {
-     
-     print("Choose the name of your character")
-     
-     let nameCharacter = readLine()
-     
-     guard let nameCharacterS = nameCharacter, verificationName(name: nameCharacterS) == true else { return  retryW() }
-     
-     let warriorWeapon = Weapon(name: "Sword", damage: 100)
-     let warrior = Warrior(name: nameCharacterS, life: 100, weapon: warriorWeapon)
-     
-     print("The name of your warrior is \(warrior.name)")
-     
-     team.append(warrior)
-     }
-     
-     
-     func createCharacter() {
-     
-     while team.count <= 2 {
-     
-     print("Choose a character between: warrior, dwarf, magus, colossus")
-     
-     let answer = readLine()
-     
-     if let answer = answer {
-     
-     switch answer.lowercased() {
-     
-     case "warrior":
-     
-     testNomPerso()
-     
-     default:
-     
-     print("Type of unrecognized character")
-     
-     }
-     
-     }
-     
-     }
-     
-     }
-     
-     */
     
-    /*
-     func retryW() {
-     
-     let nameCharacter = readLine()
-     
-     if let nameCharacter = nameCharacter {
-     
-     if verificationName(name: nameCharacter) == true {
-     
-     let warriorWeapon = Weapon(name: "Sword", damage: 100)
-     let warrior = Warrior(name: nameCharacter, life: 100, weapon: warriorWeapon)
-     
-     print("The name of your warrior is \(warrior.name)")
-     
-     team.append(warrior)
-     
-     }
-     
-     }
-     
-     }
-     
-     func createWarrior() {
-     
-     print("Choose the name of your character")
-     
-     let nameCharacter = readLine()
-     
-     if let nameCharacter = nameCharacter  {
-     
-     guard nameCharacter == nameCharacter, verificationName(name: nameCharacter) == true else { return createWarrior()  }
-     
-     let warriorWeapon = Weapon(name: "Sword", damage: 100)
-     let warrior = Warrior(name: nameCharacter, life: 100, weapon: warriorWeapon)
-     
-     print("The name of your warrior is \(warrior.name)")
-     
-     team.append(warrior)
-     
-     }
-     
-     }
-     
-     */
-    
-    /*
-    
-    func retryW() {
-        
-        print("Choose the name of your character")
-        
-        let nameCharacter = readLine()
-        
-        
-    }
-    
- */
     
     
     func createWarrior(perso : Character) {
@@ -175,7 +49,7 @@ class Player {
             
             if verificationName(name: nameCharacter) == true {
                 
-                let persoArme = perso.weapon
+                //   let persoArme = perso.weapon
                 let perso = perso
                 perso.name = nameCharacter
                 
@@ -189,13 +63,12 @@ class Player {
                 
                 
             }
-            }
+        }
         
-
+        
     }
     
-
- 
+    
     func createCharacter() {
         
         while team.count <= 2 {
@@ -210,43 +83,21 @@ class Player {
                     
                 case "warrior":
                     
-                   let warriorWeapon = Weapon(name: "Sword", damage: 100)
-                   let warrior = Warrior(name: "", life: 100, weapon: warriorWeapon)
+                    let warriorWeapon = Weapon(name: "Sword", damage: 100)
+                    let warrior = Warrior(name: "", life: 100, weapon: warriorWeapon)
                     
-                   createWarrior(perso: warrior)
+                    createWarrior(perso: warrior)
+                    
+                    
+                    
+                case "dwarf":
+                    
+                    let dwarfWeapon = Weapon(name: "Axe", damage: 100)
+                    let dwarf = Dwarf(name: "", life: 100, weapon: dwarfWeapon)
+                    
+                    createWarrior(perso: dwarf)
                     
                     /*
-                    print("Choose the name of your character")
-                    
-                    let nameCharacter = readLine()
-                    
-                    if let nameCharacter = nameCharacter  {
-                        
-                        guard nameCharacter == nameCharacter, verificationName(name: nameCharacter) == true else {
-    
-                            
-                            print("Choose the name of your character")
-                            
-                            let nameCharacter = readLine()
-                            
-                            fallthrough
-                
-                        }
-            
-                    
-                    
-                        let warriorWeapon = Weapon(name: "Sword", damage: 100)
-                        let warrior = Warrior(name: nameCharacter, life: 100, weapon: warriorWeapon)
-                        
-                        print("The name of your warrior is \(warrior.name)")
-                        
-                        team.append(warrior)
-                        
-                    }
-                    
-     */
-                   
-                case "dwarf":
                     
                     print("Choose the name of your character")
                     
@@ -286,7 +137,16 @@ class Player {
                         
                     }
                     
+                    */
+    
                 case "magus":
+                    
+                    let magusWeapon = Weapon(name: "Scepter", damage: 100)
+                    let magus = Magus(name: "", life: 100, weapon: magusWeapon)
+                    
+                    createWarrior(perso: magus)
+                    
+                    /*
                     
                     print("Choose the name of your character")
                     
@@ -326,8 +186,17 @@ class Player {
                         
                     }
                     
+                    */
+                        
+    
                 case "colossus":
                     
+                    let colossusWeapon = Weapon(name: "Mace", damage: 100)
+                    let colossus = Colossus(name: "", life: 100, weapon: colossusWeapon)
+                    
+                    createWarrior(perso: colossus)
+                    
+                    /*
                     print("Choose the name of your character")
                     
                     let nameCharacter = readLine()
@@ -366,6 +235,8 @@ class Player {
                         
                     }
                     
+                    */
+                
                 default:
                     
                     print("Type of unrecognized character")
@@ -586,8 +457,163 @@ class Player {
  
  */
 
+/*
+ 
+ func retryW () {
+ 
+ let nameCharacter = readLine()
+ 
+ if let nameCharacter = nameCharacter {
+ 
+ if verificationName(name: nameCharacter) == true {
+ 
+ let warriorWeapon = Weapon(name: "Sword", damage: 100)
+ let warrior = Warrior(name: nameCharacter, life: 100, weapon: warriorWeapon)
+ 
+ print("The name of your warrior is \(warrior.name)")
+ 
+ team.append(warrior)
+ 
+ }
+ 
+ }
+ 
+ }
+ 
+ func createWarrior() {
+ 
+ print("Choose the name of your character")
+ 
+ let nameCharacter = readLine()
+ 
+ guard let nameCharacterS = nameCharacter, verificationName(name: nameCharacterS) == true else { return  retryW() }
+ 
+ let warriorWeapon = Weapon(name: "Sword", damage: 100)
+ let warrior = Warrior(name: nameCharacterS, life: 100, weapon: warriorWeapon)
+ 
+ print("The name of your warrior is \(warrior.name)")
+ 
+ team.append(warrior)
+ }
+ 
+ 
+ func createCharacter() {
+ 
+ while team.count <= 2 {
+ 
+ print("Choose a character between: warrior, dwarf, magus, colossus")
+ 
+ let answer = readLine()
+ 
+ if let answer = answer {
+ 
+ switch answer.lowercased() {
+ 
+ case "warrior":
+ 
+ testNomPerso()
+ 
+ default:
+ 
+ print("Type of unrecognized character")
+ 
+ }
+ 
+ }
+ 
+ }
+ 
+ }
+ 
+ */
 
+/*
+ func retryW() {
+ 
+ let nameCharacter = readLine()
+ 
+ if let nameCharacter = nameCharacter {
+ 
+ if verificationName(name: nameCharacter) == true {
+ 
+ let warriorWeapon = Weapon(name: "Sword", damage: 100)
+ let warrior = Warrior(name: nameCharacter, life: 100, weapon: warriorWeapon)
+ 
+ print("The name of your warrior is \(warrior.name)")
+ 
+ team.append(warrior)
+ 
+ }
+ 
+ }
+ 
+ }
+ 
+ func createWarrior() {
+ 
+ print("Choose the name of your character")
+ 
+ let nameCharacter = readLine()
+ 
+ if let nameCharacter = nameCharacter  {
+ 
+ guard nameCharacter == nameCharacter, verificationName(name: nameCharacter) == true else { return createWarrior()  }
+ 
+ let warriorWeapon = Weapon(name: "Sword", damage: 100)
+ let warrior = Warrior(name: nameCharacter, life: 100, weapon: warriorWeapon)
+ 
+ print("The name of your warrior is \(warrior.name)")
+ 
+ team.append(warrior)
+ 
+ }
+ 
+ }
+ 
+ */
 
+/*
+ 
+ func retryW() {
+ 
+ print("Choose the name of your character")
+ 
+ let nameCharacter = readLine()
+ 
+ 
+ }
+ 
+ */
 
+/*
+ print("Choose the name of your character")
+ 
+ let nameCharacter = readLine()
+ 
+ if let nameCharacter = nameCharacter  {
+ 
+ guard nameCharacter == nameCharacter, verificationName(name: nameCharacter) == true else {
+ 
+ 
+ print("Choose the name of your character")
+ 
+ let nameCharacter = readLine()
+ 
+ fallthrough
+ 
+ }
+ 
+ 
+ 
+ let warriorWeapon = Weapon(name: "Sword", damage: 100)
+ let warrior = Warrior(name: nameCharacter, life: 100, weapon: warriorWeapon)
+ 
+ print("The name of your warrior is \(warrior.name)")
+ 
+ team.append(warrior)
+ 
+ }
+ 
+ */
 
 
