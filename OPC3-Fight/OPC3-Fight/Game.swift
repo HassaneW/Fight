@@ -28,7 +28,7 @@ class Game {
                 
                 players.append(player)
                 
-                player.createCharacter()
+                player.createTeam()
                 
             }
             
@@ -150,9 +150,9 @@ class Game {
             
         } else if players[0].livingCharacter() == false && players[1].livingCharacter() == true {
             
-            print("All your players are dead player : \(players[0].name)")
+            print("\n------All your players are dead player : \(players[0].name)")
             
-            print("The winner is \(players[1].name)\n")
+            print("\n------The winner is \(players[1].name)\n")
             
         }
         
