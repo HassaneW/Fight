@@ -66,10 +66,6 @@ class Game {
                     
                     players[1].removeCharacter()
                     
-                 //   deadTeam()
-                    
-                   // winner()
-                    
                     deadWin()
                     
                     compteurOne += 1
@@ -103,10 +99,6 @@ class Game {
                     
                     players[0].removeCharacter()
                     
-                   // deadTeam()
-                    
-                   // winner()
-                    
                     deadWin()
                     
                     compteurTwo += 1
@@ -124,6 +116,7 @@ class Game {
         
         print("""
             Statistics part:
+            
             Player One : \(players[0].name),
             Care performed: \(counterCare1),
             Attack performed : \(compteurOne),
@@ -133,72 +126,35 @@ class Game {
             Attack performed : \(compteurTwo),
             """)
         
-         print("See you soon for a new game")
+        print("See you soon for a new game")
     }
-    
-    /*
-    
-    func deadTeam() {
-        
-        if  players[0].livingCharacter() == false {
-            
-            print("All your players are dead")
-            
-        } else if players[1].livingCharacter() == false {
-            
-            print("All your players are dead")
-            
-        }
-        
-    }
-    
-    func winner()  {
-        
-        if players[0].livingCharacter() == true && players[1].livingCharacter() == false {
-            
-            print("The Winner is \(players[0].name)\n")
-            
-            print("See you soon for a new game")
-            
-        } else if players[0].livingCharacter() == false && players[1].livingCharacter() == true {
-            
-            print("The winner is \(players[1].name)\n")
-            
-            print("See you soon for a new game")
-            
-        }
-        
-    }
-    */
     
     func start()  {
         
         print("Welcome to the game by W.\n")
         
         create2Players ()
+        
         fight()
         
     }
     
-    
-    
     func deadWin()  {
         
         if players[0].livingCharacter() == true && players[1].livingCharacter() == false {
-                
-            print("All your players are dead player : \(players[1].name)")
             
-                print("The Winner is \(players[0].name)\n")
-                
-               
-                
-            } else if players[0].livingCharacter() == false && players[1].livingCharacter() == true {
+            print("\n------All your players are dead player : \(players[1].name)")
             
-                print("All your players are dead player : \(players[0].name)")
-                
-                print("The winner is \(players[1].name)\n")
-                
-            }
+            print("\n------The Winner is \(players[0].name)------\n")
+            
+        } else if players[0].livingCharacter() == false && players[1].livingCharacter() == true {
+            
+            print("All your players are dead player : \(players[0].name)")
+            
+            print("The winner is \(players[1].name)\n")
             
         }
+        
     }
+    
+}
