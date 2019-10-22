@@ -126,7 +126,41 @@ class Game {
             Attack performed : \(compteurTwo),
             """)
         
-        print("See you soon for a new game ? Yes or No")
+    }
+    
+    func winner()  {
+        
+        if players[0].livingCharacterInTeam() == true && players[1].livingCharacterInTeam() == false {
+            
+            print("\n------All your players are dead player : \(players[1].name)")
+            
+            print("\n------The Winner is \(players[0].name)------\n")
+            
+        } else if players[0].livingCharacterInTeam() == false && players[1].livingCharacterInTeam() == true {
+            
+            print("\n------All your players are dead player : \(players[0].name)")
+            
+            print("\n------The winner is \(players[1].name)\n")
+            
+        }
+        
+    }
+    
+    func start()  {
+        
+        print("\nWelcome to the game by W.\n")
+        
+        createPlayers ()
+        
+        fight()
+        
+        newGame()
+        
+    }
+    
+    func newGame() {
+        
+        print("\nSee you soon for a new game ? Yes or No")
         
         let reponse = readLine()
         
@@ -143,34 +177,6 @@ class Game {
             }
             
         }
-        
-    }
-    
-    func winner()  {
-           
-           if players[0].livingCharacterInTeam() == true && players[1].livingCharacterInTeam() == false {
-               
-               print("\n------All your players are dead player : \(players[1].name)")
-               
-               print("\n------The Winner is \(players[0].name)------\n")
-               
-           } else if players[0].livingCharacterInTeam() == false && players[1].livingCharacterInTeam() == true {
-               
-               print("\n------All your players are dead player : \(players[0].name)")
-               
-               print("\n------The winner is \(players[1].name)\n")
-               
-           }
-           
-       }
-    
-    func start()  {
-        
-        print("\nWelcome to the game by W.\n")
-        
-        createPlayers ()
-        
-        fight()
         
     }
     
