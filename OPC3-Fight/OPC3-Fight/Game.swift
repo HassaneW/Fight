@@ -14,7 +14,7 @@ class Game {
     var players = [Player]()
     var team = [Character]()
     
-    func create2Players() {
+    func createPlayers() {
         
         for counter in 1...2 {
             
@@ -44,7 +44,7 @@ class Game {
         var compteurTwo = 0
         var counterCare2 = 0
         
-        while players[0].livingCharacter() && players[1].livingCharacter() {
+        while players[0].livingCharacterInTeam() && players[1].livingCharacterInTeam() {
             
             print("Your turn to play \(players[0].name). Attack or Care")
             
@@ -58,15 +58,15 @@ class Game {
                     
                     players[0].teamPresentation()
                     
-                    players[0].personalCare()
+                    players[0].caringCharacter()
                     
                 } else if answer == "Attack" {
                     
                     players[0].playerAttack(adversary: players[1])
                     
-                    players[1].removeCharacter()
+                    players[1].deadCharacter()
                     
-                    deadWin()
+                    winner()
                     
                     compteurOne += 1
                     
@@ -89,7 +89,7 @@ class Game {
                     
                     players[1].teamPresentation()
                     
-                    players[1].personalCare()
+                    players[1].caringCharacter()
                     
                     counterCare2 += 1
                     
@@ -97,9 +97,9 @@ class Game {
                     
                     players[1].playerAttack(adversary: players[0])
                     
-                    players[0].removeCharacter()
+                    players[0].deadCharacter()
                     
-                    deadWin()
+                    winner()
                     
                     compteurTwo += 1
                     
@@ -126,35 +126,51 @@ class Game {
             Attack performed : \(compteurTwo),
             """)
         
-        print("See you soon for a new game")
+        print("See you soon for a new game ? Yes or No")
+        
+        let reponse = readLine()
+        
+        if let reponse = reponse {
+            
+            if reponse == "Yes" {
+                
+                start()
+                
+            } else if reponse == "No" {
+                
+                return
+                
+            }
+            
+        }
         
     }
+    
+    func winner()  {
+           
+           if players[0].livingCharacterInTeam() == true && players[1].livingCharacterInTeam() == false {
+               
+               print("\n------All your players are dead player : \(players[1].name)")
+               
+               print("\n------The Winner is \(players[0].name)------\n")
+               
+           } else if players[0].livingCharacterInTeam() == false && players[1].livingCharacterInTeam() == true {
+               
+               print("\n------All your players are dead player : \(players[0].name)")
+               
+               print("\n------The winner is \(players[1].name)\n")
+               
+           }
+           
+       }
     
     func start()  {
         
-        print("Welcome to the game by W.\n")
+        print("\nWelcome to the game by W.\n")
         
-        create2Players ()
+        createPlayers ()
         
         fight()
-        
-    }
-    
-    func deadWin()  {
-        
-        if players[0].livingCharacter() == true && players[1].livingCharacter() == false {
-            
-            print("\n------All your players are dead player : \(players[1].name)")
-            
-            print("\n------The Winner is \(players[0].name)------\n")
-            
-        } else if players[0].livingCharacter() == false && players[1].livingCharacter() == true {
-            
-            print("\n------All your players are dead player : \(players[0].name)")
-            
-            print("\n------The winner is \(players[1].name)\n")
-            
-        }
         
     }
     

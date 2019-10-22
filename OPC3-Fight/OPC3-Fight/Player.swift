@@ -60,7 +60,6 @@ class Player {
             }
         }
         
-        
     }
     
     
@@ -162,7 +161,7 @@ class Player {
         return nil
     }
     
-    func personalCare() {
+    func caringCharacter() {
         
         guard let character = characterChoice() else { print("No character chosen"); return  }
         
@@ -202,7 +201,7 @@ class Player {
         
     }
     
-    func livingCharacter() -> Bool {
+    func livingCharacterInTeam() -> Bool {
         
         for character in team {
             
@@ -218,7 +217,7 @@ class Player {
         
     }
     
-    func searchCharacter(character : Character) -> Int {
+    func deadCharacterCounter(character : Character) -> Int {
         
         var counter = 0
         
@@ -237,13 +236,13 @@ class Player {
         return counter
     }
     
-    func removeCharacter()  {
+    func deadCharacter()  {
         
         for character in team  {
             
             if character.life <= 0 {
                 
-                team.remove(at: searchCharacter(character : character))
+                team.remove(at: deadCharacterCounter(character : character))
                 
             }
             
