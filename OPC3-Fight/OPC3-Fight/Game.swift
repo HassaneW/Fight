@@ -9,10 +9,9 @@
 import Foundation
 
 
-class Game {
+internal class Game {
     
     var players = [Player]()
-    var team = [Character]()
     
     func createPlayers() {
         

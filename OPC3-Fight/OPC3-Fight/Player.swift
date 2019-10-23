@@ -8,11 +8,11 @@
 
 import Foundation
 
-class Player {
+internal class Player {
     
     var name : String
     var team = [Character]()
-    var nameSetCharacter = Set<String>()
+    private var nameSetCharacter = Set<String>()
     
     init(name : String) {
         
@@ -36,7 +36,7 @@ class Player {
         
     }
     
-    func createCharacter(character : Character) {
+    private func createCharacter(character : Character) {
         
         print("Choose the name of your character")
         
@@ -115,7 +115,7 @@ class Player {
         
     }
     
-    func verificationName(name : String) -> Bool {
+    private func verificationName(name : String) -> Bool {
         
         if nameSetCharacter.contains(name) {
             
@@ -217,7 +217,7 @@ class Player {
         
     }
     
-    func deadCharacterCounter(character : Character) -> Int {
+    private func deadCharacterCounter(character : Character) -> Int {
         
         var counter = 0
         

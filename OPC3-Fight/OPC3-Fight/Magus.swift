@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Magus: Character {
+internal class Magus: Character {
 
 }
 

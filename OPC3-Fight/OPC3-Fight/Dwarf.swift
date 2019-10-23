@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Dwarf: Character {
+internal class Dwarf: Character {
 
 }
 

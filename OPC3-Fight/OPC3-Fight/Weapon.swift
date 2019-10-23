@@ -9,7 +9,7 @@
 import Foundation
 
 
-class Weapon {
+internal class Weapon {
     
     var name : String
     var damage : Int

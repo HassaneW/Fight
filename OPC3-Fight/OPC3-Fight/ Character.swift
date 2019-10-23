@@ -9,7 +9,7 @@
 import Foundation
 
 
-class Character {
+internal class Character {
     
     var name : String
     var life : Int
@@ -37,7 +37,7 @@ class Character {
         
     }
     
-    func magicChest() {
+    private func magicChest() {
         
         var number : Int = 0
         
