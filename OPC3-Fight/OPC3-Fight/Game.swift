@@ -13,6 +13,7 @@ internal class Game {
     
     var players = [Player]()
     
+/// Creation of 2 players and their teams
     func createPlayers() {
         
         for counter in 1...2 {
@@ -35,7 +36,7 @@ internal class Game {
         
     }
     
-    
+/// Play of a game between players
     func fight() {
         
         var counterCare1 = 0
@@ -126,7 +127,8 @@ internal class Game {
             """)
         
     }
-    
+
+/// Winner's design
     func winner()  {
         
         if players[0].livingCharacterInTeam() == true && players[1].livingCharacterInTeam() == false {
@@ -145,6 +147,7 @@ internal class Game {
         
     }
     
+/// Launch of the game
     func start()  {
         
         print("\nWelcome to the game by W.\n")
@@ -157,7 +160,8 @@ internal class Game {
         
     }
     
-    func newGame() {
+/// New part
+    private func newGame() {
         
         print("\nSee you soon for a new game ? Yes or No")
         

@@ -36,6 +36,7 @@ internal class Player {
         
     }
     
+/// Create a character, check that his name is unique then add him to a player team
     private func createCharacter(character : Character) {
         
         print("Choose the name of your character")
@@ -46,12 +47,12 @@ internal class Player {
             
             if verificationName(name: nameCharacter) == true {
                 
-                let perso = character
-                perso.name = nameCharacter
+                let teamCharacter = character
+                teamCharacter.name = nameCharacter
                 
-                print("The name of your warrior is \(perso.name)")
+                print("The name of your warrior is \(teamCharacter.name)")
                 
-                team.append(perso)
+                team.append(teamCharacter)
                 
             } else {
                 
@@ -115,6 +116,7 @@ internal class Player {
         
     }
     
+/// Verification that the name is unique
     private func verificationName(name : String) -> Bool {
         
         if nameSetCharacter.contains(name) {
@@ -132,6 +134,7 @@ internal class Player {
         
     }
     
+/// Choice of a character in a team by his index.
     func characterChoice() -> Character? {
         
         print("Select your character number")
@@ -171,6 +174,7 @@ internal class Player {
         
     }
     
+/// Attack between characters
     func playerAttack(adversary: Player) {
         
         teamPresentation()
@@ -217,6 +221,7 @@ internal class Player {
         
     }
     
+/// Index of dead characters in a team
     private func deadCharacterCounter(character : Character) -> Int {
         
         var counter = 0
@@ -236,6 +241,7 @@ internal class Player {
         return counter
     }
     
+/// Deleting dead characters from a team
     func deadCharacter()  {
         
         for character in team  {
