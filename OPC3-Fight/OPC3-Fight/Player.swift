@@ -36,7 +36,7 @@ internal class Player {
         
     }
     
-/// Create a character, check that his name is unique then add him to a player team
+// Create a character, check that his name is unique then add him to a player team
     private func createCharacter(character : Character) {
         
         print("Choose the name of your character")
@@ -116,7 +116,7 @@ internal class Player {
         
     }
     
-/// Verification that the name is unique
+// Verification that the name is unique
     private func verificationName(name : String) -> Bool {
         
         if nameSetCharacter.contains(name) {
@@ -134,7 +134,7 @@ internal class Player {
         
     }
     
-/// Choice of a character in a team by his index.
+// Choice of a character in a team by his index.
     func characterChoice() -> Character? {
         
         print("Select your character number")
@@ -174,7 +174,7 @@ internal class Player {
         
     }
     
-/// Attack between characters
+// Attack between characters
     func playerAttack(adversary: Player) {
         
         teamPresentation()
@@ -241,7 +241,7 @@ internal class Player {
         return counter
     }
     
-/// Deleting dead characters from a team
+// Deleting dead characters from a team
     func deadCharacter()  {
         
         for character in team  {
