@@ -49,7 +49,6 @@ internal class Game {
         fight()
         
         newGame()
-        
     }
     
 // Play of a game between players
@@ -143,17 +142,39 @@ internal class Game {
             """)
         
     }
+    
+// New part
+    func newGame() {
+            
+            print("\nSee you soon for a new game ? Yes or No")
+            
+            let reponse = readLine()
+            
+            if let reponse = reponse {
+                
+                if reponse == "Yes" {
+                    
+                    start()
+                    
+                } else if reponse == "No" {
+                    
+                    return
+                    
+                    }
+                
+                }
+            
+            }
 
 // MARK: - Winner
     
-<<<<<<< HEAD
     func deadTeam() {
         
-        if players[0].livingCharacter() == false {
+        if players[0].livingCharacterInTeam() == false {
             
             print("All your players are dead")
             
-        } else if players[1].livingCharacter() == false {
+        } else if players[1].livingCharacterInTeam() == false {
             
             print("All your players are dead")
             
@@ -162,10 +183,9 @@ internal class Game {
     }
     
     func checkForWinner()  {
-=======
+
 // Winner's design
     func winner()  {
->>>>>>> Projet3
         
         if players[0].livingCharacterInTeam() == true && players[1].livingCharacterInTeam() == false {
             
@@ -179,33 +199,10 @@ internal class Game {
             
             print("\n------The winner is \(players[1].name)\n")
             
-        }
-        
-    }
-    
-// MARK: - Restart
-    
-// New part
-    private func newGame() {
-        
-        print("\nSee you soon for a new game ? Yes or No")
-        
-        let reponse = readLine()
-        
-        if let reponse = reponse {
-            
-            if reponse == "Yes" {
-                
-                start()
-                
-            } else if reponse == "No" {
-                
-                return
-                
             }
-            
-        }
         
+        }
+    
     }
     
 }

@@ -78,14 +78,13 @@ internal class Player {
                     
                 case "warrior":
                     
-<<<<<<< HEAD
                     print("Choose the name of your character")
                         
-                    let nameCharacter = readLine()
-=======
+                    _ = readLine()
+
                     let warriorWeapon = Weapon(name: "Sword", damage: 100)
                     let warrior = Warrior(name: "", life: 100, weapon: warriorWeapon)
->>>>>>> Projet3
+
                     
                     createCharacter(character: warrior)
                     
