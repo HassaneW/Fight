@@ -221,7 +221,7 @@ internal class Player {
         
     }
     
-/// Index of dead characters in a team
+// Index of dead characters in a team
     private func deadCharacterCounter(character : Character) -> Int {
         
         var counter = 0

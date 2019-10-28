@@ -8,6 +8,7 @@
 
 import Foundation
 
+// MARK: - Initialization
 
 internal class Game {
     
@@ -33,6 +34,21 @@ internal class Game {
             }
             
         }
+        
+    }
+    
+// MARK: - Game
+    
+    // Launch of the game
+    func start()  {
+        
+        print("\nWelcome to the game by W.\n")
+        
+        createPlayers ()
+        
+        fight()
+        
+        newGame()
         
     }
     
@@ -128,6 +144,8 @@ internal class Game {
         
     }
 
+// MARK: - Winner
+    
 // Winner's design
     func winner()  {
         
@@ -146,19 +164,8 @@ internal class Game {
         }
         
     }
-
-// Launch of the game
-    func start()  {
-        
-        print("\nWelcome to the game by W.\n")
-        
-        createPlayers ()
-        
-        fight()
-        
-        newGame()
-        
-    }
+    
+// MARK: - Restart
     
 // New part
     private func newGame() {
