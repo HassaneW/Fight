@@ -36,7 +36,7 @@ internal class Player {
         
     }
     
-// Create a character, check that his name is unique then add him to a player team
+    // Create a character, check that his name is unique then add him to a player team
     private func createCharacter(character : Character) {
         
         print("Choose the name of your character")
@@ -79,12 +79,12 @@ internal class Player {
                 case "warrior":
                     
                     print("Choose the name of your character")
-                        
-                    _ = readLine()
-
+                    
+                    let nameCharacter = readLine()
+                    
                     let warriorWeapon = Weapon(name: "Sword", damage: 100)
                     let warrior = Warrior(name: "", life: 100, weapon: warriorWeapon)
-
+                    
                     
                     createCharacter(character: warrior)
                     
@@ -121,7 +121,7 @@ internal class Player {
         
     }
     
-// Verification that the name is unique
+    // Verification that the name is unique
     private func verificationName(name : String) -> Bool {
         
         if nameSetCharacter.contains(name) {
@@ -139,7 +139,7 @@ internal class Player {
         
     }
     
-// Choice of a character in a team by his index.
+    // Choice of a character in a team by his index.
     func characterChoice() -> Character? {
         
         print("Select your character number")
@@ -179,7 +179,7 @@ internal class Player {
         
     }
     
-// Attack between characters
+    // Attack between characters
     func playerAttack(adversary: Player) {
         
         teamPresentation()
@@ -226,7 +226,7 @@ internal class Player {
         
     }
     
-// Index of dead characters in a team
+    // Index of dead characters in a team
     private func deadCharacterCounter(character : Character) -> Int {
         
         var counter = 0
@@ -246,7 +246,7 @@ internal class Player {
         return counter
     }
     
-// Deleting dead characters from a team
+    // Deleting dead characters from a team
     func deadCharacter()  {
         
         for character in team  {

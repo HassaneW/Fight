@@ -8,11 +8,10 @@
 
 import Foundation
 
-// MARK: - Initialization
-
-internal class Game {
+class Game {
     
     var players = [Player]()
+    var team = [Character]()
     
     // Creation of players and their teams
     func createPlayers() {
@@ -37,21 +36,9 @@ internal class Game {
         
     }
     
-// MARK: - Game
     
-    // Launch of the game
-    func start()  {
-        
-        print("\nWelcome to the game by W.\n")
-        
-        createPlayers ()
-        
-        fight()
-        
-        newGame()
-    }
     
-// Play of a game between players
+    // Play of a game between players
     func fight() {
         
         var counterCare1 = 0
@@ -80,8 +67,6 @@ internal class Game {
                     players[0].playerAttack(adversary: players[1])
                     
                     players[1].deadCharacter()
-                    
-                    checkForWinner()
                     
                     compteurOne += 1
                     
@@ -114,8 +99,6 @@ internal class Game {
                     
                     players[0].deadCharacter()
                     
-                    checkForWinner()
-                    
                     compteurTwo += 1
                     
                     if players[0].team.count == 0 {
@@ -143,30 +126,7 @@ internal class Game {
         
     }
     
-// New part
-    func newGame() {
-            
-            print("\nSee you soon for a new game ? Yes or No")
-            
-            let reponse = readLine()
-            
-            if let reponse = reponse {
-                
-                if reponse == "Yes" {
-                    
-                    start()
-                    
-                } else if reponse == "No" {
-                    
-                    return
-                    
-                    }
-                
-                }
-            
-            }
-
-// MARK: - Winner
+   
     
     func deadTeam() {
         
@@ -182,9 +142,8 @@ internal class Game {
         
     }
     
-    func checkForWinner()  {
-
-// Winner's design
+    
+    // Winner's design
     func winner()  {
         
         if players[0].livingCharacterInTeam() == true && players[1].livingCharacterInTeam() == false {
@@ -199,10 +158,43 @@ internal class Game {
             
             print("\n------The winner is \(players[1].name)\n")
             
-            }
-        
         }
-    
+        
     }
+    
+    // Launch of the game
+    func start()  {
+        
+        print("\nWelcome to the game by W.\n")
+        
+        createPlayers ()
+        
+        fight()
+        
+        newGame()
+    }
+    
+    // New part
+       func newGame() {
+           
+           print("\nSee you soon for a new game ? Yes or No")
+           
+           let reponse = readLine()
+           
+           if let reponse = reponse {
+               
+               if reponse == "Yes" {
+                   
+                   start()
+                   
+               } else if reponse == "No" {
+                   
+                   return
+                   
+               }
+               
+           }
+           
+       }
     
 }
