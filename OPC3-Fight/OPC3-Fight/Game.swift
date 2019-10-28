@@ -8,10 +8,11 @@
 
 import Foundation
 
-class Game {
+// MARK: - Initialization
+
+internal class Game {
     
     var players = [Player]()
-    var team = [Character]()
     
     // Creation of players and their teams
     func createPlayers() {
@@ -36,9 +37,22 @@ class Game {
         
     }
     
+// MARK: - Game
     
+    // Launch of the game
+    func start()  {
+        
+        print("\nWelcome to the game by W.\n")
+        
+        createPlayers ()
+        
+        fight()
+        
+        newGame()
+        
+    }
     
-    // Play of a game between players
+// Play of a game between players
     func fight() {
         
         var counterCare1 = 0
@@ -67,6 +81,8 @@ class Game {
                     players[0].playerAttack(adversary: players[1])
                     
                     players[1].deadCharacter()
+                    
+                    winner()
                     
                     compteurOne += 1
                     
@@ -99,6 +115,8 @@ class Game {
                     
                     players[0].deadCharacter()
                     
+                    winner()
+                    
                     compteurTwo += 1
                     
                     if players[0].team.count == 0 {
@@ -125,25 +143,10 @@ class Game {
             """)
         
     }
+
+// MARK: - Winner
     
-   
-    
-    func deadTeam() {
-        
-        if players[0].livingCharacterInTeam() == false {
-            
-            print("All your players are dead")
-            
-        } else if players[1].livingCharacterInTeam() == false {
-            
-            print("All your players are dead")
-            
-        }
-        
-    }
-    
-    
-    // Winner's design
+// Winner's design
     func winner()  {
         
         if players[0].livingCharacterInTeam() == true && players[1].livingCharacterInTeam() == false {
@@ -162,39 +165,29 @@ class Game {
         
     }
     
-    // Launch of the game
-    func start()  {
-        
-        print("\nWelcome to the game by W.\n")
-        
-        createPlayers ()
-        
-        fight()
-        
-        newGame()
-    }
+// MARK: - Restart
     
-    // New part
-       func newGame() {
-           
-           print("\nSee you soon for a new game ? Yes or No")
-           
-           let reponse = readLine()
-           
-           if let reponse = reponse {
-               
-               if reponse == "Yes" {
-                   
-                   start()
-                   
-               } else if reponse == "No" {
-                   
-                   return
-                   
-               }
-               
-           }
-           
-       }
+// New part
+    private func newGame() {
+        
+        print("\nSee you soon for a new game ? Yes or No")
+        
+        let reponse = readLine()
+        
+        if let reponse = reponse {
+            
+            if reponse == "Yes" {
+                
+                start()
+                
+            } else if reponse == "No" {
+                
+                return
+                
+            }
+            
+        }
+        
+    }
     
 }

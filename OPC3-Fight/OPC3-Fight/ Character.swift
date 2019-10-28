@@ -23,14 +23,14 @@ internal class Character {
         
     }
     
-    // Increase a character's health
+// Increase a character's health
     func care()  {
         
         life = life + 20
         
     }
     
-    // Attack between characters
+// Attack between characters
     func attack(adversary : Character) {
         
         magicChest()
@@ -39,7 +39,7 @@ internal class Character {
         
     }
     
-    // Magic box that appears at random and doubles the damage of an attack
+// Magic box that appears at random and doubles the damage of an attack
     private func magicChest() {
         
         var number : Int = 0
