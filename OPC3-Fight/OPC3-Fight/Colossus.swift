@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Colossus: Character {
+internal class Colossus: Character {
     
 }
 

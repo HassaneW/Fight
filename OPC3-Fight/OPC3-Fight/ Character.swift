@@ -9,7 +9,7 @@
 import Foundation
 
 
-class Character {
+internal class Character {
     
     var name : String
     var life : Int
@@ -23,12 +23,14 @@ class Character {
         
     }
     
+// Increase a character's health
     func care()  {
         
         life = life + 20
         
     }
     
+// Attack between characters
     func attack(adversary : Character) {
         
         magicChest()
@@ -37,7 +39,8 @@ class Character {
         
     }
     
-    func magicChest() {
+// Magic box that appears at random and doubles the damage of an attack
+    private func magicChest() {
         
         var number : Int = 0
         

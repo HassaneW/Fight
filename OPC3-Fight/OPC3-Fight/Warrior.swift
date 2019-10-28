@@ -9,6 +9,6 @@
 import Foundation
 
 
-class Warrior: Character {
+internal class Warrior: Character {
 
 }
