@@ -50,7 +50,7 @@ internal class Player {
                 let teamCharacter = character
                 teamCharacter.name = nameCharacter
                 
-                print("The name of your warrior is \(teamCharacter.name)")
+                print("The name of your character is \(teamCharacter.name)")
                 
                 team.append(teamCharacter)
                 
