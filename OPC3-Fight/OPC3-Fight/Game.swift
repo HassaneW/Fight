@@ -56,8 +56,8 @@ internal class Game {
     func fight() {
         
         var counterCare1 = 0
-        var compteurOne = 0
-        var compteurTwo = 0
+        var counterOne = 0
+        var counterTwo = 0
         var counterCare2 = 0
         
         while players[0].livingCharacterInTeam() && players[1].livingCharacterInTeam() {
@@ -84,7 +84,7 @@ internal class Game {
                     
                     winner()
                     
-                    compteurOne += 1
+                    counterOne += 1
                     
                     if players[1].team.count == 0 {
                         
@@ -117,7 +117,7 @@ internal class Game {
                     
                     winner()
                     
-                    compteurTwo += 1
+                    counterTwo += 1
                     
                     if players[0].team.count == 0 {
                         
@@ -135,11 +135,11 @@ internal class Game {
             
             Player One : \(players[0].name),
             Care performed: \(counterCare1),
-            Attack performed : \(compteurOne),
+            Attack performed : \(counterOne),
             
             Player Two : \(players[1].name),
             Care performed: \(counterCare2),
-            Attack performed : \(compteurTwo),
+            Attack performed : \(counterTwo),
             """)
         
     }
